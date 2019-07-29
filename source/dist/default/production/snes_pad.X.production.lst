@@ -1,0 +1,1259 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
+                                                                                               Wed May 23 20:53:09 2018
+
+Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
+     1                           	processor	12F629
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	inittext,global,class=CODE,delta=2
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2,group=1
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2,group=1
+    14                           	dabs	1,0x5E,2
+    15  0000                     
+    16                           ; Version 1.45
+    17                           ; Generated 16/11/2017 GMT
+    18                           ; 
+    19                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    20                           ; All rights reserved.
+    21                           ; 
+    22                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    23                           ; 
+    24                           ; Redistribution and use in source and binary forms, with or without modification, are
+    25                           ; permitted provided that the following conditions are met:
+    26                           ; 
+    27                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    28                           ;        conditions and the following disclaimer.
+    29                           ; 
+    30                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    31                           ;        of conditions and the following disclaimer in the documentation and/or other
+    32                           ;        materials provided with the distribution.
+    33                           ; 
+    34                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    35                           ;        software without specific prior written permission.
+    36                           ; 
+    37                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    38                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    39                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    40                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    41                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    42                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    43                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    44                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    45                           ; 
+    46                           ; 
+    47                           ; Code-generator required, PIC12F629 Definitions
+    48                           ; 
+    49                           ; SFR Addresses
+    50  0000                     	;# 
+    51  0001                     	;# 
+    52  0002                     	;# 
+    53  0003                     	;# 
+    54  0004                     	;# 
+    55  0005                     	;# 
+    56  000A                     	;# 
+    57  000B                     	;# 
+    58  000C                     	;# 
+    59  000E                     	;# 
+    60  000E                     	;# 
+    61  000F                     	;# 
+    62  0010                     	;# 
+    63  0019                     	;# 
+    64  0081                     	;# 
+    65  0085                     	;# 
+    66  008C                     	;# 
+    67  008E                     	;# 
+    68  0090                     	;# 
+    69  0095                     	;# 
+    70  0096                     	;# 
+    71  0096                     	;# 
+    72  0099                     	;# 
+    73  009A                     	;# 
+    74  009A                     	;# 
+    75  009B                     	;# 
+    76  009C                     	;# 
+    77  009D                     	;# 
+    78                           
+    79                           	psect	idataBANK0
+    80  01E8                     __pidataBANK0:	
+    81                           
+    82                           ;initializer for _speed
+    83  01E8  34C8               	retlw	200
+    84  01E9  3400               	retlw	0
+    85  01EA  342C               	retlw	44
+    86  01EB  3401               	retlw	1
+    87  01EC  3490               	retlw	144
+    88  01ED  3401               	retlw	1
+    89  01EE  34F4               	retlw	244
+    90  01EF  3401               	retlw	1
+    91  01F0  3458               	retlw	88
+    92  01F1  3402               	retlw	2
+    93  01F2  3420               	retlw	32
+    94  01F3  3403               	retlw	3
+    95  01F4  34E8               	retlw	232
+    96  01F5  3403               	retlw	3
+    97  01F6  34B0               	retlw	176
+    98  01F7  3404               	retlw	4
+    99  01F8  34DC               	retlw	220
+   100  01F9  3405               	retlw	5
+   101  01FA  34D0               	retlw	208
+   102  01FB  3407               	retlw	7
+   103                           
+   104                           ;initializer for _autoB
+   105  01FC  34D0               	retlw	208
+   106  01FD  3407               	retlw	7
+   107                           
+   108                           ;initializer for _autoA
+   109  01FE  34D0               	retlw	208
+   110  01FF  3407               	retlw	7
+   111                           
+   112                           ;initializer for _oldButtonB
+   113  0200  34FF               	retlw	255
+   114                           
+   115                           ;initializer for _oldButtonA
+   116  0201  34FF               	retlw	255
+   117                           
+   118                           	psect	nvBANK0
+   119  004B                     __pnvBANK0:	
+   120  004B                     _eepromData:	
+   121  004B                     	ds	1
+   122  0005                     _GPIO	set	5
+   123  0019                     _CMCON	set	25
+   124  005F                     _GIE	set	95
+   125  0018                     _CARRY	set	24
+   126  0029                     _GP1	set	41
+   127  0028                     _GP0	set	40
+   128  002B                     _GP3	set	43
+   129  002A                     _GP2	set	42
+   130  009D                     _EECON2	set	157
+   131  009A                     _EEDATA	set	154
+   132  009C                     _EECON1	set	156
+   133  009B                     _EEADR	set	155
+   134  0085                     _TRISIO	set	133
+   135  04E2                     _WREN	set	1250
+   136  04E0                     _RD	set	1248
+   137  04E1                     _WR	set	1249
+   138                           
+   139                           ; #config settings
+   140  0000                     
+   141                           	psect	cinit
+   142  03EA                     start_initialization:	
+   143  03EA                     __initialization:	
+   144                           
+   145                           ; Initialize objects allocated to BANK0
+   146  03EA  1383               	bcf	3,7	;select IRP bank0
+   147  03EB  303A               	movlw	low (__pdataBANK0+26)
+   148  03EC  00DD               	movwf	btemp+-1
+   149  03ED  3001               	movlw	high __pidataBANK0
+   150  03EE  00DE               	movwf	btemp
+   151  03EF  30E8               	movlw	low __pidataBANK0
+   152  03F0  00DF               	movwf	btemp+1
+   153  03F1  3020               	movlw	low __pdataBANK0
+   154  03F2  0084               	movwf	4
+   155  03F3  21C4               	fcall	init_ram0
+   156                           
+   157                           ; Clear objects allocated to BANK0
+   158  03F4  01BA               	clrf	__pbssBANK0& (0+127)
+   159  03F5  01BB               	clrf	(__pbssBANK0+1)& (0+127)
+   160  03F6  01BC               	clrf	(__pbssBANK0+2)& (0+127)
+   161  03F7  01BD               	clrf	(__pbssBANK0+3)& (0+127)
+   162  03F8  01BE               	clrf	(__pbssBANK0+4)& (0+127)
+   163  03F9  01BF               	clrf	(__pbssBANK0+5)& (0+127)
+   164  03FA  01C0               	clrf	(__pbssBANK0+6)& (0+127)
+   165  03FB  01C1               	clrf	(__pbssBANK0+7)& (0+127)
+   166  03FC  01C2               	clrf	(__pbssBANK0+8)& (0+127)
+   167  03FD                     end_of_initialization:	
+   168                           ;End of C runtime variable initialization code
+   169                           
+   170  03FD                     __end_of__initialization:	
+   171  03FD  0183               	clrf	3
+   172  03FE  2A27               	ljmp	_main	;jump to C main() function
+   173                           
+   174                           	psect	bssBANK0
+   175  003A                     __pbssBANK0:	
+   176  003A                     _cntB:	
+   177  003A                     	ds	2
+   178  003C                     _cntA:	
+   179  003C                     	ds	2
+   180  003E                     _outB:	
+   181  003E                     	ds	1
+   182  003F                     _outA:	
+   183  003F                     	ds	1
+   184  0040                     _buttonB:	
+   185  0040                     	ds	1
+   186  0041                     _buttonA:	
+   187  0041                     	ds	1
+   188  0042                     _trigger:	
+   189  0042                     	ds	1
+   190                           
+   191                           	psect	dataBANK0
+   192  0020                     __pdataBANK0:	
+   193  0020                     _speed:	
+   194  0020                     	ds	20
+   195  0034                     _autoB:	
+   196  0034                     	ds	2
+   197  0036                     _autoA:	
+   198  0036                     	ds	2
+   199  0038                     _oldButtonB:	
+   200  0038                     	ds	1
+   201  0039                     _oldButtonA:	
+   202  0039                     	ds	1
+   203                           
+   204                           	psect	inittext
+   205  01C0                     init_fetch0:	
+   206                           ;	Called with low address in FSR and high address in W
+   207                           
+   208  01C0  085E               	movf	94,w
+   209  01C1  008A               	movwf	10
+   210  01C2  085F               	movf	95,w
+   211  01C3  0082               	movwf	2
+   212  01C4                     init_ram0:	
+   213                           ;Called with:
+   214                           ;	high address of idata address in btemp 
+   215                           ;	low address of idata address in btemp+1 
+   216                           ;	low address of data in FSR
+   217                           ;	high address + 1 of data in btemp-1
+   218                           
+   219  01C4  21C0               	fcall	init_fetch0
+   220  01C5  0080               	movwf	0
+   221  01C6  0A84               	incf	4,f
+   222  01C7  0804               	movf	4,w
+   223  01C8  065D               	xorwf	93,w
+   224  01C9  1903               	btfsc	3,2
+   225  01CA  3400               	retlw	0
+   226  01CB  0ADF               	incf	95,f
+   227  01CC  1903               	btfsc	3,2
+   228  01CD  0ADE               	incf	94,f
+   229  01CE  29C4               	goto	init_ram0
+   230                           
+   231                           	psect	cstackBANK0
+   232  0043                     __pcstackBANK0:	
+   233  0043                     ?_eeprom_read:	
+   234  0043                     ??_eeprom_read:	
+   235                           ; 1 bytes @ 0x0
+   236                           
+   237  0043                     ?_eeprom_write:	
+   238                           ; 1 bytes @ 0x0
+   239                           
+   240  0043                     ?_main:	
+   241                           ; 1 bytes @ 0x0
+   242                           
+   243  0043                     eeprom_write@value:	
+   244                           ; 1 bytes @ 0x0
+   245                           
+   246                           
+   247                           ; 1 bytes @ 0x0
+   248  0043                     	ds	1
+   249  0044                     ??_eeprom_write:	
+   250  0044                     eeprom_read@addr:	
+   251                           ; 1 bytes @ 0x1
+   252                           
+   253                           
+   254                           ; 1 bytes @ 0x1
+   255  0044                     	ds	1
+   256  0045                     eeprom_write@addr:	
+   257                           
+   258                           ; 1 bytes @ 0x2
+   259  0045                     	ds	1
+   260  0046                     ??_main:	
+   261                           
+   262                           ; 1 bytes @ 0x3
+   263  0046                     	ds	5
+   264                           
+   265                           	psect	maintext
+   266  0227                     __pmaintext:	
+   267 ;;
+   268 ;;Main: autosize = 0, tempsize = 5, incstack = 0, save=0
+   269 ;;
+   270 ;; *************** function _main *****************
+   271 ;; Defined at:
+   272 ;;		line 56 in file "main.c"
+   273 ;; Parameters:    Size  Location     Type
+   274 ;;		None
+   275 ;; Auto vars:     Size  Location     Type
+   276 ;;		None
+   277 ;; Return value:  Size  Location     Type
+   278 ;;                  1    wreg      void 
+   279 ;; Registers used:
+   280 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   281 ;; Tracked objects:
+   282 ;;		On entry : B00/0
+   283 ;;		On exit  : 0/0
+   284 ;;		Unchanged: 0/0
+   285 ;; Data sizes:     COMMON   BANK0
+   286 ;;      Params:         0       0
+   287 ;;      Locals:         0       0
+   288 ;;      Temps:          0       5
+   289 ;;      Totals:         0       5
+   290 ;;Total ram usage:        5 bytes
+   291 ;; Hardware stack levels required when called:    1
+   292 ;; This function calls:
+   293 ;;		_eeprom_read
+   294 ;;		_eeprom_write
+   295 ;; This function is called by:
+   296 ;;		Startup code after reset
+   297 ;; This function uses a non-reentrant model
+   298 ;;
+   299                           
+   300                           
+   301                           ;psect for function _main
+   302  0227                     _main:	
+   303                           
+   304                           ;main.c: 59: CMCON = 0x07;
+   305                           
+   306                           ;incstack = 0
+   307                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   308  0227  3007               	movlw	7
+   309  0228  1283               	bcf	3,5	;RP0=0, select bank0
+   310  0229  0099               	movwf	25	;volatile
+   311                           
+   312                           ;main.c: 60: TRISIO = 0x0F;
+   313  022A  300F               	movlw	15
+   314  022B  1683               	bsf	3,5	;RP0=1, select bank1
+   315  022C  0085               	movwf	5	;volatile
+   316                           
+   317                           ;main.c: 61: GPIO = 0x00;
+   318  022D  1283               	bcf	3,5	;RP0=0, select bank0
+   319  022E  0185               	clrf	5	;volatile
+   320                           
+   321                           ;main.c: 64: eepromData = eeprom_read(0x01);
+   322  022F  3001               	movlw	1
+   323  0230  21CF               	fcall	_eeprom_read
+   324  0231  1283               	bcf	3,5	;RP0=0, select bank0
+   325  0232  00C6               	movwf	??_main
+   326  0233  0846               	movf	??_main,w
+   327  0234  00CB               	movwf	_eepromData
+   328                           
+   329                           ;main.c: 65: if (eepromData > 9) eepromData = 5;
+   330  0235  300A               	movlw	10
+   331  0236  024B               	subwf	_eepromData,w
+   332  0237  1C03               	skipc
+   333  0238  2A3D               	goto	l49
+   334  0239  3005               	movlw	5
+   335  023A  00C6               	movwf	??_main
+   336  023B  0846               	movf	??_main,w
+   337  023C  00CB               	movwf	_eepromData
+   338  023D                     l49:	
+   339                           
+   340                           ;main.c: 66: buttonA = eepromData;
+   341  023D  084B               	movf	_eepromData,w
+   342  023E  00C6               	movwf	??_main
+   343  023F  0846               	movf	??_main,w
+   344  0240  00C1               	movwf	_buttonA
+   345                           
+   346                           ;main.c: 67: oldButtonA = buttonA;
+   347  0241  0841               	movf	_buttonA,w
+   348  0242  00C6               	movwf	??_main
+   349  0243  0846               	movf	??_main,w
+   350  0244  00B9               	movwf	_oldButtonA
+   351                           
+   352                           ;main.c: 69: eepromData = eeprom_read(0x03);
+   353  0245  3003               	movlw	3
+   354  0246  21CF               	fcall	_eeprom_read
+   355  0247  1283               	bcf	3,5	;RP0=0, select bank0
+   356  0248  00C6               	movwf	??_main
+   357  0249  0846               	movf	??_main,w
+   358  024A  00CB               	movwf	_eepromData
+   359                           
+   360                           ;main.c: 70: if (eepromData > 9) eepromData = 5;
+   361  024B  300A               	movlw	10
+   362  024C  024B               	subwf	_eepromData,w
+   363  024D  1C03               	skipc
+   364  024E  2A53               	goto	l50
+   365  024F  3005               	movlw	5
+   366  0250  00C6               	movwf	??_main
+   367  0251  0846               	movf	??_main,w
+   368  0252  00CB               	movwf	_eepromData
+   369  0253                     l50:	
+   370                           
+   371                           ;main.c: 71: buttonB = eepromData;
+   372  0253  084B               	movf	_eepromData,w
+   373  0254  00C6               	movwf	??_main
+   374  0255  0846               	movf	??_main,w
+   375  0256  00C0               	movwf	_buttonB
+   376                           
+   377                           ;main.c: 72: oldButtonB = buttonB;
+   378  0257  0840               	movf	_buttonB,w
+   379  0258  00C6               	movwf	??_main
+   380  0259  0846               	movf	??_main,w
+   381  025A  00B8               	movwf	_oldButtonB
+   382  025B                     l821:	
+   383                           ;main.c: 82: while (1) {
+   384                           
+   385                           
+   386                           ;main.c: 85: if ((GP2 == 0) && (GP3 == 0)) {
+   387  025B  1D05               	btfss	5,2	;volatile
+   388  025C  1985               	btfsc	5,3	;volatile
+   389  025D  2A64               	goto	l52
+   390                           
+   391                           ;main.c: 87: buttonA = 5;
+   392  025E  3005               	movlw	5
+   393  025F  00C6               	movwf	??_main
+   394  0260  0846               	movf	??_main,w
+   395  0261  00C1               	movwf	_buttonA
+   396                           
+   397                           ;main.c: 88: buttonB = 5;
+   398  0262  3005               	movlw	5
+   399  0263  2AA1               	goto	L1
+   400  0264                     l52:	
+   401                           ;main.c: 90: } else if (GP2 == 0) {
+   402                           
+   403  0264  1905               	btfsc	5,2	;volatile
+   404  0265  2AA5               	goto	l54
+   405                           
+   406                           ;main.c: 92: trigger = 1;
+   407  0266  01C2               	clrf	_trigger
+   408  0267  0AC2               	incf	_trigger,f
+   409                           
+   410                           ;main.c: 94: if (GP0 == 0) {
+   411  0268  1805               	btfsc	5,0	;volatile
+   412  0269  2A86               	goto	l839
+   413                           
+   414                           ;main.c: 95: cntA ++;
+   415  026A  3001               	movlw	1
+   416  026B  07BC               	addwf	_cntA,f
+   417  026C  1803               	skipnc
+   418  026D  0ABD               	incf	_cntA+1,f
+   419  026E  3000               	movlw	0
+   420  026F  07BD               	addwf	_cntA+1,f
+   421                           
+   422                           ;main.c: 96: if (cntA > 2000) {
+   423  0270  3007               	movlw	7
+   424  0271  023D               	subwf	_cntA+1,w
+   425  0272  30D1               	movlw	209
+   426  0273  1903               	skipnz
+   427  0274  023C               	subwf	_cntA,w
+   428  0275  1C03               	skipc
+   429  0276  2A86               	goto	l839
+   430                           
+   431                           ;main.c: 97: cntA = 0;
+   432  0277  01BC               	clrf	_cntA
+   433  0278  01BD               	clrf	_cntA+1
+   434                           
+   435                           ;main.c: 98: buttonA ++;
+   436  0279  3001               	movlw	1
+   437  027A  00C6               	movwf	??_main
+   438  027B  0846               	movf	??_main,w
+   439  027C  07C1               	addwf	_buttonA,f
+   440                           
+   441                           ;main.c: 99: if (buttonA > 9) buttonA = 9;
+   442  027D  0841               	movf	_buttonA,w
+   443  027E  3A80               	xorlw	128
+   444  027F  3E76               	addlw	-138
+   445  0280  1C03               	skipc
+   446  0281  2A86               	goto	l839
+   447  0282  3009               	movlw	9
+   448  0283  00C6               	movwf	??_main
+   449  0284  0846               	movf	??_main,w
+   450  0285  00C1               	movwf	_buttonA
+   451  0286                     l839:	
+   452                           
+   453                           ;main.c: 100: }
+   454                           ;main.c: 101: }
+   455                           ;main.c: 103: if (GP1 == 0) {
+   456  0286  1885               	btfsc	5,1	;volatile
+   457  0287  2B2A               	goto	l911
+   458                           
+   459                           ;main.c: 104: cntB ++;
+   460  0288  3001               	movlw	1
+   461  0289  07BA               	addwf	_cntB,f
+   462  028A  1803               	skipnc
+   463  028B  0ABB               	incf	_cntB+1,f
+   464  028C  3000               	movlw	0
+   465  028D  07BB               	addwf	_cntB+1,f
+   466                           
+   467                           ;main.c: 105: if (cntB > 2000) {
+   468  028E  3007               	movlw	7
+   469  028F  023B               	subwf	_cntB+1,w
+   470  0290  30D1               	movlw	209
+   471  0291  1903               	skipnz
+   472  0292  023A               	subwf	_cntB,w
+   473  0293  1C03               	skipc
+   474  0294  2B2A               	goto	l911
+   475                           
+   476                           ;main.c: 106: cntB = 0;
+   477  0295  01BA               	clrf	_cntB
+   478  0296  01BB               	clrf	_cntB+1
+   479                           
+   480                           ;main.c: 107: buttonB ++;
+   481  0297  3001               	movlw	1
+   482  0298  00C6               	movwf	??_main
+   483  0299  0846               	movf	??_main,w
+   484  029A  07C0               	addwf	_buttonB,f
+   485                           
+   486                           ;main.c: 108: if (buttonB > 9) buttonB = 9;
+   487  029B  0840               	movf	_buttonB,w
+   488  029C  3A80               	xorlw	128
+   489  029D  3E76               	addlw	-138
+   490  029E  1C03               	skipc
+   491  029F  2B2A               	goto	l911
+   492  02A0  3009               	movlw	9
+   493  02A1                     L1:	
+   494  02A1  00C6               	movwf	??_main
+   495  02A2  0846               	movf	??_main,w
+   496  02A3  00C0               	movwf	_buttonB
+   497                           
+   498                           ;main.c: 109: }
+   499                           ;main.c: 110: }
+   500                           ;main.c: 112: } else if (GP3 == 0) {
+   501  02A4  2B2A               	goto	l911
+   502  02A5                     l54:	
+   503  02A5  1985               	btfsc	5,3	;volatile
+   504  02A6  2ADB               	goto	l877
+   505                           
+   506                           ;main.c: 114: trigger = 2;
+   507  02A7  3002               	movlw	2
+   508  02A8  00C6               	movwf	??_main
+   509  02A9  0846               	movf	??_main,w
+   510  02AA  00C2               	movwf	_trigger
+   511                           
+   512                           ;main.c: 116: if (GP0 == 0) {
+   513  02AB  1805               	btfsc	5,0	;volatile
+   514  02AC  2AC2               	goto	l865
+   515                           
+   516                           ;main.c: 117: cntA ++;
+   517  02AD  3001               	movlw	1
+   518  02AE  07BC               	addwf	_cntA,f
+   519  02AF  1803               	skipnc
+   520  02B0  0ABD               	incf	_cntA+1,f
+   521  02B1  3000               	movlw	0
+   522  02B2  07BD               	addwf	_cntA+1,f
+   523                           
+   524                           ;main.c: 118: if (cntA > 2000) {
+   525  02B3  3007               	movlw	7
+   526  02B4  023D               	subwf	_cntA+1,w
+   527  02B5  30D1               	movlw	209
+   528  02B6  1903               	skipnz
+   529  02B7  023C               	subwf	_cntA,w
+   530  02B8  1C03               	skipc
+   531  02B9  2AC2               	goto	l865
+   532                           
+   533                           ;main.c: 119: cntA = 0;
+   534  02BA  01BC               	clrf	_cntA
+   535  02BB  01BD               	clrf	_cntA+1
+   536                           
+   537                           ;main.c: 120: buttonA --;
+   538  02BC  30FF               	movlw	255
+   539  02BD  00C6               	movwf	??_main
+   540  02BE  0846               	movf	??_main,w
+   541  02BF  07C1               	addwf	_buttonA,f
+   542                           
+   543                           ;main.c: 121: if (buttonA < 0) buttonA = 0;
+   544  02C0  1BC1               	btfsc	_buttonA,7
+   545  02C1  01C1               	clrf	_buttonA
+   546  02C2                     l865:	
+   547                           
+   548                           ;main.c: 122: }
+   549                           ;main.c: 123: }
+   550                           ;main.c: 125: if (GP1 == 0) {
+   551  02C2  1885               	btfsc	5,1	;volatile
+   552  02C3  2B2A               	goto	l911
+   553                           
+   554                           ;main.c: 126: cntB ++;
+   555  02C4  3001               	movlw	1
+   556  02C5  07BA               	addwf	_cntB,f
+   557  02C6  1803               	skipnc
+   558  02C7  0ABB               	incf	_cntB+1,f
+   559  02C8  3000               	movlw	0
+   560  02C9  07BB               	addwf	_cntB+1,f
+   561                           
+   562                           ;main.c: 127: if (cntB > 2000) {
+   563  02CA  3007               	movlw	7
+   564  02CB  023B               	subwf	_cntB+1,w
+   565  02CC  30D1               	movlw	209
+   566  02CD  1903               	skipnz
+   567  02CE  023A               	subwf	_cntB,w
+   568  02CF  1C03               	skipc
+   569  02D0  2B2A               	goto	l911
+   570                           
+   571                           ;main.c: 128: cntB = 0;
+   572  02D1  01BA               	clrf	_cntB
+   573  02D2  01BB               	clrf	_cntB+1
+   574                           
+   575                           ;main.c: 129: buttonB --;
+   576  02D3  30FF               	movlw	255
+   577  02D4  00C6               	movwf	??_main
+   578  02D5  0846               	movf	??_main,w
+   579  02D6  07C0               	addwf	_buttonB,f
+   580                           
+   581                           ;main.c: 130: if (buttonB < 0) buttonB = 0;
+   582  02D7  1FC0               	btfss	_buttonB,7
+   583  02D8  2B2A               	goto	l911
+   584  02D9  01C0               	clrf	_buttonB
+   585                           
+   586                           ;main.c: 131: }
+   587                           ;main.c: 132: }
+   588                           ;main.c: 134: } else {
+   589  02DA  2B2A               	goto	l911
+   590  02DB                     l877:	
+   591                           
+   592                           ;main.c: 137: if (trigger == 1) {
+   593  02DB  0342               	decf	_trigger,w
+   594  02DC  1D03               	btfss	3,2
+   595  02DD  2B07               	goto	l893
+   596                           
+   597                           ;main.c: 139: if (cntA > 500) {
+   598  02DE  3001               	movlw	1
+   599  02DF  023D               	subwf	_cntA+1,w
+   600  02E0  30F5               	movlw	245
+   601  02E1  1903               	skipnz
+   602  02E2  023C               	subwf	_cntA,w
+   603  02E3  1C03               	skipc
+   604  02E4  2AF2               	goto	l71
+   605                           
+   606                           ;main.c: 140: buttonA ++;
+   607  02E5  3001               	movlw	1
+   608  02E6  00C6               	movwf	??_main
+   609  02E7  0846               	movf	??_main,w
+   610  02E8  07C1               	addwf	_buttonA,f
+   611                           
+   612                           ;main.c: 141: if (buttonA > 9) buttonA = 9;
+   613  02E9  0841               	movf	_buttonA,w
+   614  02EA  3A80               	xorlw	128
+   615  02EB  3E76               	addlw	-138
+   616  02EC  1C03               	skipc
+   617  02ED  2AF2               	goto	l71
+   618  02EE  3009               	movlw	9
+   619  02EF  00C6               	movwf	??_main
+   620  02F0  0846               	movf	??_main,w
+   621  02F1  00C1               	movwf	_buttonA
+   622  02F2                     l71:	
+   623                           
+   624                           ;main.c: 142: }
+   625                           ;main.c: 144: if (cntB > 500) {
+   626  02F2  3001               	movlw	1
+   627  02F3  023B               	subwf	_cntB+1,w
+   628  02F4  30F5               	movlw	245
+   629  02F5  1903               	skipnz
+   630  02F6  023A               	subwf	_cntB,w
+   631  02F7  1C03               	skipc
+   632  02F8  2B25               	goto	l75
+   633                           
+   634                           ;main.c: 145: buttonB ++;
+   635  02F9  3001               	movlw	1
+   636  02FA  00C6               	movwf	??_main
+   637  02FB  0846               	movf	??_main,w
+   638  02FC  07C0               	addwf	_buttonB,f
+   639                           
+   640                           ;main.c: 146: if (buttonB > 9) buttonB = 9;
+   641  02FD  0840               	movf	_buttonB,w
+   642  02FE  3A80               	xorlw	128
+   643  02FF  3E76               	addlw	-138
+   644  0300  1C03               	skipc
+   645  0301  2B25               	goto	l75
+   646  0302  3009               	movlw	9
+   647  0303  00C6               	movwf	??_main
+   648  0304  0846               	movf	??_main,w
+   649  0305  00C0               	movwf	_buttonB
+   650                           
+   651                           ;main.c: 147: }
+   652                           ;main.c: 149: } else if (trigger == 2) {
+   653  0306  2B25               	goto	l75
+   654  0307                     l893:	
+   655  0307  3002               	movlw	2
+   656  0308  0642               	xorwf	_trigger,w
+   657  0309  1D03               	btfss	3,2
+   658  030A  2B25               	goto	l75
+   659                           
+   660                           ;main.c: 151: if (cntA > 500) {
+   661  030B  3001               	movlw	1
+   662  030C  023D               	subwf	_cntA+1,w
+   663  030D  30F5               	movlw	245
+   664  030E  1903               	skipnz
+   665  030F  023C               	subwf	_cntA,w
+   666  0310  1C03               	skipc
+   667  0311  2B18               	goto	l903
+   668                           
+   669                           ;main.c: 152: buttonA --;
+   670  0312  30FF               	movlw	255
+   671  0313  00C6               	movwf	??_main
+   672  0314  0846               	movf	??_main,w
+   673  0315  07C1               	addwf	_buttonA,f
+   674                           
+   675                           ;main.c: 153: if (buttonA < 0) buttonA = 0;
+   676  0316  1BC1               	btfsc	_buttonA,7
+   677  0317  01C1               	clrf	_buttonA
+   678  0318                     l903:	
+   679                           
+   680                           ;main.c: 154: }
+   681                           ;main.c: 156: if (cntB > 500) {
+   682  0318  3001               	movlw	1
+   683  0319  023B               	subwf	_cntB+1,w
+   684  031A  30F5               	movlw	245
+   685  031B  1903               	skipnz
+   686  031C  023A               	subwf	_cntB,w
+   687  031D  1C03               	skipc
+   688  031E  2B25               	goto	l75
+   689                           
+   690                           ;main.c: 157: buttonB --;
+   691  031F  30FF               	movlw	255
+   692  0320  00C6               	movwf	??_main
+   693  0321  0846               	movf	??_main,w
+   694  0322  07C0               	addwf	_buttonB,f
+   695                           
+   696                           ;main.c: 158: if (buttonB < 0) buttonB = 0;
+   697  0323  1BC0               	btfsc	_buttonB,7
+   698  0324  01C0               	clrf	_buttonB
+   699  0325                     l75:	
+   700                           
+   701                           ;main.c: 159: }
+   702                           ;main.c: 161: }
+   703                           ;main.c: 164: cntA = 0;
+   704  0325  01BC               	clrf	_cntA
+   705  0326  01BD               	clrf	_cntA+1
+   706                           
+   707                           ;main.c: 165: cntB = 0;
+   708  0327  01BA               	clrf	_cntB
+   709  0328  01BB               	clrf	_cntB+1
+   710                           
+   711                           ;main.c: 166: trigger = 0;
+   712  0329  01C2               	clrf	_trigger
+   713  032A                     l911:	
+   714                           
+   715                           ;main.c: 168: }
+   716                           ;main.c: 174: if (GP0 == 0) {
+   717  032A  1805               	btfsc	5,0	;volatile
+   718  032B  2B64               	goto	l925
+   719                           
+   720                           ;main.c: 175: autoA ++;
+   721  032C  3001               	movlw	1
+   722  032D  07B6               	addwf	_autoA,f
+   723  032E  1803               	skipnc
+   724  032F  0AB7               	incf	_autoA+1,f
+   725  0330  3000               	movlw	0
+   726  0331  07B7               	addwf	_autoA+1,f
+   727                           
+   728                           ;main.c: 176: if (autoA > speed[buttonA]) {
+   729  0332  0841               	movf	_buttonA,w
+   730  0333  00C6               	movwf	??_main
+   731  0334  0746               	addwf	??_main,w
+   732  0335  3E20               	addlw	(low (_speed| 0))& (0+255)
+   733  0336  0084               	movwf	4
+   734  0337  1383               	bcf	3,7	;select IRP bank0
+   735  0338  0800               	movf	0,w
+   736  0339  00C7               	movwf	??_main+1
+   737  033A  0A84               	incf	4,f
+   738  033B  0800               	movf	0,w
+   739  033C  00C8               	movwf	??_main+2
+   740  033D  0837               	movf	_autoA+1,w
+   741  033E  0248               	subwf	??_main+2,w
+   742  033F  1D03               	skipz
+   743  0340  2B43               	goto	u785
+   744  0341  0836               	movf	_autoA,w
+   745  0342  0247               	subwf	??_main+1,w
+   746  0343                     u785:	
+   747  0343  1803               	skipnc
+   748  0344  2B68               	goto	l927
+   749                           
+   750                           ;main.c: 177: outA = 1;
+   751  0345  01BF               	clrf	_outA
+   752  0346  0ABF               	incf	_outA,f
+   753                           
+   754                           ;main.c: 178: if (autoA > (speed[buttonA] + 200)) {
+   755  0347  0841               	movf	_buttonA,w
+   756  0348  00C6               	movwf	??_main
+   757  0349  0746               	addwf	??_main,w
+   758  034A  3E20               	addlw	(low (_speed| 0))& (0+255)
+   759  034B  0084               	movwf	4
+   760  034C  0800               	movf	0,w
+   761  034D  00C7               	movwf	??_main+1
+   762  034E  0A84               	incf	4,f
+   763  034F  0800               	movf	0,w
+   764  0350  00C8               	movwf	??_main+2
+   765  0351  0847               	movf	??_main+1,w
+   766  0352  3EC8               	addlw	200
+   767  0353  00C9               	movwf	??_main+3
+   768  0354  0848               	movf	??_main+2,w
+   769  0355  1803               	skipnc
+   770  0356  3E01               	addlw	1
+   771  0357  3E00               	addlw	0
+   772  0358  00CA               	movwf	??_main+4
+   773  0359  0837               	movf	_autoA+1,w
+   774  035A  024A               	subwf	??_main+4,w
+   775  035B  1D03               	skipz
+   776  035C  2B5F               	goto	u795
+   777  035D  0836               	movf	_autoA,w
+   778  035E  0249               	subwf	??_main+3,w
+   779  035F                     u795:	
+   780  035F  1803               	skipnc
+   781  0360  2B69               	goto	l929
+   782                           
+   783                           ;main.c: 179: autoA = 0;
+   784  0361  01B6               	clrf	_autoA
+   785  0362  01B7               	clrf	_autoA+1
+   786                           
+   787                           ;main.c: 180: }
+   788                           ;main.c: 181: } else {
+   789  0363  2B69               	goto	l929
+   790  0364                     l925:	
+   791                           ;main.c: 183: }
+   792                           ;main.c: 184: } else {
+   793                           
+   794                           ;main.c: 182: outA = 0;
+   795                           
+   796                           
+   797                           ;main.c: 185: autoA = speed[9];
+   798  0364  0833               	movf	_speed+19,w
+   799  0365  00B7               	movwf	_autoA+1
+   800  0366  0832               	movf	_speed+18,w
+   801  0367  00B6               	movwf	_autoA
+   802  0368                     l927:	
+   803                           
+   804                           ;main.c: 186: outA = 0;
+   805  0368  01BF               	clrf	_outA
+   806  0369                     l929:	
+   807                           
+   808                           ;main.c: 187: }
+   809                           ;main.c: 190: if (GP1 == 0) {
+   810  0369  1885               	btfsc	5,1	;volatile
+   811  036A  2BA3               	goto	l943
+   812                           
+   813                           ;main.c: 191: autoB ++;
+   814  036B  3001               	movlw	1
+   815  036C  07B4               	addwf	_autoB,f
+   816  036D  1803               	skipnc
+   817  036E  0AB5               	incf	_autoB+1,f
+   818  036F  3000               	movlw	0
+   819  0370  07B5               	addwf	_autoB+1,f
+   820                           
+   821                           ;main.c: 192: if (autoB > speed[buttonB]) {
+   822  0371  0840               	movf	_buttonB,w
+   823  0372  00C6               	movwf	??_main
+   824  0373  0746               	addwf	??_main,w
+   825  0374  3E20               	addlw	(low (_speed| 0))& (0+255)
+   826  0375  0084               	movwf	4
+   827  0376  1383               	bcf	3,7	;select IRP bank0
+   828  0377  0800               	movf	0,w
+   829  0378  00C7               	movwf	??_main+1
+   830  0379  0A84               	incf	4,f
+   831  037A  0800               	movf	0,w
+   832  037B  00C8               	movwf	??_main+2
+   833  037C  0835               	movf	_autoB+1,w
+   834  037D  0248               	subwf	??_main+2,w
+   835  037E  1D03               	skipz
+   836  037F  2B82               	goto	u815
+   837  0380  0834               	movf	_autoB,w
+   838  0381  0247               	subwf	??_main+1,w
+   839  0382                     u815:	
+   840  0382  1803               	skipnc
+   841  0383  2BA7               	goto	l945
+   842                           
+   843                           ;main.c: 193: outB = 1;
+   844  0384  01BE               	clrf	_outB
+   845  0385  0ABE               	incf	_outB,f
+   846                           
+   847                           ;main.c: 194: if (autoB > (speed[buttonB] + 200)) {
+   848  0386  0840               	movf	_buttonB,w
+   849  0387  00C6               	movwf	??_main
+   850  0388  0746               	addwf	??_main,w
+   851  0389  3E20               	addlw	(low (_speed| 0))& (0+255)
+   852  038A  0084               	movwf	4
+   853  038B  0800               	movf	0,w
+   854  038C  00C7               	movwf	??_main+1
+   855  038D  0A84               	incf	4,f
+   856  038E  0800               	movf	0,w
+   857  038F  00C8               	movwf	??_main+2
+   858  0390  0847               	movf	??_main+1,w
+   859  0391  3EC8               	addlw	200
+   860  0392  00C9               	movwf	??_main+3
+   861  0393  0848               	movf	??_main+2,w
+   862  0394  1803               	skipnc
+   863  0395  3E01               	addlw	1
+   864  0396  3E00               	addlw	0
+   865  0397  00CA               	movwf	??_main+4
+   866  0398  0835               	movf	_autoB+1,w
+   867  0399  024A               	subwf	??_main+4,w
+   868  039A  1D03               	skipz
+   869  039B  2B9E               	goto	u825
+   870  039C  0834               	movf	_autoB,w
+   871  039D  0249               	subwf	??_main+3,w
+   872  039E                     u825:	
+   873  039E  1803               	skipnc
+   874  039F  2BA8               	goto	l947
+   875                           
+   876                           ;main.c: 195: autoB = 0;
+   877  03A0  01B4               	clrf	_autoB
+   878  03A1  01B5               	clrf	_autoB+1
+   879                           
+   880                           ;main.c: 196: }
+   881                           ;main.c: 197: } else {
+   882  03A2  2BA8               	goto	l947
+   883  03A3                     l943:	
+   884                           ;main.c: 199: }
+   885                           ;main.c: 200: } else {
+   886                           
+   887                           ;main.c: 198: outB = 0;
+   888                           
+   889                           
+   890                           ;main.c: 201: autoB = speed[9];
+   891  03A3  0833               	movf	_speed+19,w
+   892  03A4  00B5               	movwf	_autoB+1
+   893  03A5  0832               	movf	_speed+18,w
+   894  03A6  00B4               	movwf	_autoB
+   895  03A7                     l945:	
+   896                           
+   897                           ;main.c: 202: outB = 0;
+   898  03A7  01BE               	clrf	_outB
+   899  03A8                     l947:	
+   900                           
+   901                           ;main.c: 203: }
+   902                           ;main.c: 208: if (GP2 == 1 && GP3 == 1) {
+   903  03A8  1905               	btfsc	5,2	;volatile
+   904  03A9  1D85               	btfss	5,3	;volatile
+   905  03AA  2BD4               	goto	l963
+   906                           
+   907                           ;main.c: 209: if (buttonA != oldButtonA) {
+   908  03AB  0841               	movf	_buttonA,w
+   909  03AC  00C6               	movwf	??_main
+   910  03AD  01C7               	clrf	??_main+1
+   911  03AE  1BC6               	btfsc	??_main,7
+   912  03AF  03C7               	decf	??_main+1,f
+   913  03B0  0839               	movf	_oldButtonA,w
+   914  03B1  0646               	xorwf	??_main,w
+   915  03B2  0447               	iorwf	??_main+1,w
+   916  03B3  1903               	skipnz
+   917  03B4  2BBF               	goto	l957
+   918                           
+   919                           ;main.c: 210: oldButtonA = buttonA;
+   920  03B5  0841               	movf	_buttonA,w
+   921  03B6  00C6               	movwf	??_main
+   922  03B7  0846               	movf	??_main,w
+   923  03B8  00B9               	movwf	_oldButtonA
+   924                           
+   925                           ;main.c: 211: eeprom_write(0x01, buttonA);
+   926  03B9  0841               	movf	_buttonA,w
+   927  03BA  00C6               	movwf	??_main
+   928  03BB  0846               	movf	??_main,w
+   929  03BC  00C3               	movwf	eeprom_write@value
+   930  03BD  3001               	movlw	1
+   931  03BE  2202               	fcall	_eeprom_write
+   932  03BF                     l957:	
+   933                           
+   934                           ;main.c: 212: }
+   935                           ;main.c: 213: if (buttonB != oldButtonB) {
+   936  03BF  1283               	bcf	3,5	;RP0=0, select bank0
+   937  03C0  0840               	movf	_buttonB,w
+   938  03C1  00C6               	movwf	??_main
+   939  03C2  01C7               	clrf	??_main+1
+   940  03C3  1BC6               	btfsc	??_main,7
+   941  03C4  03C7               	decf	??_main+1,f
+   942  03C5  0838               	movf	_oldButtonB,w
+   943  03C6  0646               	xorwf	??_main,w
+   944  03C7  0447               	iorwf	??_main+1,w
+   945  03C8  1903               	skipnz
+   946  03C9  2BD4               	goto	l963
+   947                           
+   948                           ;main.c: 214: oldButtonB = buttonB;
+   949  03CA  0840               	movf	_buttonB,w
+   950  03CB  00C6               	movwf	??_main
+   951  03CC  0846               	movf	??_main,w
+   952  03CD  00B8               	movwf	_oldButtonB
+   953                           
+   954                           ;main.c: 215: eeprom_write(0x03, buttonB);
+   955  03CE  0840               	movf	_buttonB,w
+   956  03CF  00C6               	movwf	??_main
+   957  03D0  0846               	movf	??_main,w
+   958  03D1  00C3               	movwf	eeprom_write@value
+   959  03D2  3003               	movlw	3
+   960  03D3  2202               	fcall	_eeprom_write
+   961  03D4                     l963:	
+   962                           
+   963                           ;main.c: 216: }
+   964                           ;main.c: 217: }
+   965                           ;main.c: 221: GPIO = (outB << 5) | (outA << 4);
+   966  03D4  1283               	bcf	3,5	;RP0=0, select bank0
+   967  03D5  083F               	movf	_outA,w
+   968  03D6  00C6               	movwf	??_main
+   969  03D7  3004               	movlw	4
+   970  03D8                     u875:	
+   971  03D8  1003               	clrc
+   972  03D9  0DC6               	rlf	??_main,f
+   973  03DA  3EFF               	addlw	-1
+   974  03DB  1D03               	skipz
+   975  03DC  2BD8               	goto	u875
+   976  03DD  083E               	movf	_outB,w
+   977  03DE  00C7               	movwf	??_main+1
+   978  03DF  3004               	movlw	4
+   979  03E0                     u885:	
+   980  03E0  1003               	clrc
+   981  03E1  0DC7               	rlf	??_main+1,f
+   982  03E2  3EFF               	addlw	-1
+   983  03E3  1D03               	skipz
+   984  03E4  2BE0               	goto	u885
+   985  03E5  1003               	clrc
+   986  03E6  0D47               	rlf	??_main+1,w
+   987  03E7  0446               	iorwf	??_main,w
+   988  03E8  0085               	movwf	5	;volatile
+   989  03E9  2A5B               	goto	l821
+   990  03EA                     __end_of_main:	
+   991                           
+   992                           	psect	text1
+   993  0202                     __ptext1:	
+   994 ;; *************** function _eeprom_write *****************
+   995 ;; Defined at:
+   996 ;;		line 6 in file "C:\Code\Microchip\xc8\v1.45\sources\pic\eewrite.c"
+   997 ;; Parameters:    Size  Location     Type
+   998 ;;  addr            1    wreg     unsigned char 
+   999 ;;  value           1    0[BANK0 ] unsigned char 
+  1000 ;; Auto vars:     Size  Location     Type
+  1001 ;;  addr            1    2[BANK0 ] unsigned char 
+  1002 ;; Return value:  Size  Location     Type
+  1003 ;;                  1    wreg      void 
+  1004 ;; Registers used:
+  1005 ;;		wreg, status,2, status,0
+  1006 ;; Tracked objects:
+  1007 ;;		On entry : 0/0
+  1008 ;;		On exit  : 0/0
+  1009 ;;		Unchanged: 0/0
+  1010 ;; Data sizes:     COMMON   BANK0
+  1011 ;;      Params:         0       1
+  1012 ;;      Locals:         0       1
+  1013 ;;      Temps:          0       1
+  1014 ;;      Totals:         0       3
+  1015 ;;Total ram usage:        3 bytes
+  1016 ;; Hardware stack levels used:    1
+  1017 ;; This function calls:
+  1018 ;;		Nothing
+  1019 ;; This function is called by:
+  1020 ;;		_main
+  1021 ;; This function uses a non-reentrant model
+  1022 ;;
+  1023                           
+  1024                           
+  1025                           ;psect for function _eeprom_write
+  1026  0202                     _eeprom_write:	
+  1027                           
+  1028                           ;incstack = 0
+  1029                           ; Regs used in _eeprom_write: [wreg+status,2+status,0]
+  1030                           ;eeprom_write@addr stored from wreg
+  1031  0202  1283               	bcf	3,5	;RP0=0, select bank0
+  1032  0203  00C5               	movwf	eeprom_write@addr
+  1033  0204                     l131:	
+  1034  0204  1683               	bsf	3,5	;RP0=1, select bank1
+  1035  0205  189C               	btfsc	28,1	;volsfr
+  1036  0206  2A04               	goto	l131
+  1037  0207  1283               	bcf	3,5	;RP0=0, select bank0
+  1038  0208  0845               	movf	eeprom_write@addr,w
+  1039  0209  1683               	bsf	3,5	;RP0=1, select bank1
+  1040  020A  009B               	movwf	27	;volatile
+  1041  020B  1283               	bcf	3,5	;RP0=0, select bank0
+  1042  020C  0843               	movf	eeprom_write@value,w
+  1043  020D  1683               	bsf	3,5	;RP0=1, select bank1
+  1044  020E  009A               	movwf	26	;volatile
+  1045  020F  303F               	movlw	63
+  1046  0210  1283               	bcf	3,5	;RP0=0, select bank0
+  1047  0211  00C4               	movwf	??_eeprom_write
+  1048  0212  0844               	movf	??_eeprom_write,w
+  1049  0213  1683               	bsf	3,5	;RP0=1, select bank1
+  1050  0214  059C               	andwf	28,f	;volsfr
+  1051  0215  1283               	bcf	3,5	;RP0=0, select bank0
+  1052  0216  1003               	bcf	3,0	;volatile
+  1053  0217  1B8B               	btfsc	11,7	;volatile
+  1054  0218  1403               	bsf	3,0	;volatile
+  1055  0219  138B               	bcf	11,7	;volatile
+  1056  021A  1683               	bsf	3,5	;RP0=1, select bank1
+  1057  021B  151C               	bsf	28,2	;volsfr
+  1058  021C  3055               	movlw	85
+  1059  021D  009D               	movwf	29	;volsfr
+  1060  021E  30AA               	movlw	170
+  1061  021F  009D               	movwf	29	;volsfr
+  1062  0220  149C               	bsf	28,1	;volsfr
+  1063  0221  111C               	bcf	28,2	;volsfr
+  1064  0222  1283               	bcf	3,5	;RP0=0, select bank0
+  1065  0223  1C03               	btfss	3,0	;volatile
+  1066  0224  0008               	return
+  1067  0225  178B               	bsf	11,7	;volatile
+  1068  0226  0008               	return
+  1069  0227                     __end_of_eeprom_write:	
+  1070                           
+  1071                           	psect	text2
+  1072  01CF                     __ptext2:	
+  1073 ;; *************** function _eeprom_read *****************
+  1074 ;; Defined at:
+  1075 ;;		line 6 in file "C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c"
+  1076 ;; Parameters:    Size  Location     Type
+  1077 ;;  addr            1    wreg     unsigned char 
+  1078 ;; Auto vars:     Size  Location     Type
+  1079 ;;  addr            1    1[BANK0 ] unsigned char 
+  1080 ;; Return value:  Size  Location     Type
+  1081 ;;                  1    wreg      unsigned char 
+  1082 ;; Registers used:
+  1083 ;;		wreg, status,2, status,0
+  1084 ;; Tracked objects:
+  1085 ;;		On entry : 0/0
+  1086 ;;		On exit  : 0/0
+  1087 ;;		Unchanged: 0/0
+  1088 ;; Data sizes:     COMMON   BANK0
+  1089 ;;      Params:         0       0
+  1090 ;;      Locals:         0       1
+  1091 ;;      Temps:          0       1
+  1092 ;;      Totals:         0       2
+  1093 ;;Total ram usage:        2 bytes
+  1094 ;; Hardware stack levels used:    1
+  1095 ;; This function calls:
+  1096 ;;		Nothing
+  1097 ;; This function is called by:
+  1098 ;;		_main
+  1099 ;; This function uses a non-reentrant model
+  1100 ;;
+  1101                           
+  1102                           
+  1103                           ;psect for function _eeprom_read
+  1104  01CF                     _eeprom_read:	
+  1105                           
+  1106                           ;incstack = 0
+  1107                           ; Regs used in _eeprom_read: [wreg+status,2+status,0]
+  1108                           ;eeprom_read@addr stored from wreg
+  1109  01CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1110  01D0  00C4               	movwf	eeprom_read@addr
+  1111  01D1                     l109:	
+  1112  01D1  0064               	clrwdt	;# 
+  1113  01D2  1683               	bsf	3,5	;RP0=1, select bank1
+  1114  01D3  189C               	btfsc	28,1	;volsfr
+  1115  01D4  29D1               	goto	l109
+  1116  01D5  1283               	bcf	3,5	;RP0=0, select bank0
+  1117  01D6  0844               	movf	eeprom_read@addr,w
+  1118  01D7  1683               	bsf	3,5	;RP0=1, select bank1
+  1119  01D8  009B               	movwf	27	;volatile
+  1120  01D9  303F               	movlw	63
+  1121  01DA  1283               	bcf	3,5	;RP0=0, select bank0
+  1122  01DB  00C3               	movwf	??_eeprom_read
+  1123  01DC  0843               	movf	??_eeprom_read,w
+  1124  01DD  1683               	bsf	3,5	;RP0=1, select bank1
+  1125  01DE  059C               	andwf	28,f	;volsfr
+  1126  01DF  141C               	bsf	28,0	;volsfr
+  1127  01E0  1003               	clrc
+  1128  01E1  181C               	btfsc	28,0	;volsfr
+  1129  01E2  1403               	setc
+  1130  01E3  3000               	movlw	0
+  1131  01E4  1803               	skipnc
+  1132  01E5  3001               	movlw	1
+  1133  01E6  081A               	movf	26,w	;volatile
+  1134  01E7  0008               	return
+  1135  01E8                     __end_of_eeprom_read:	
+  1136  005E                     btemp	set	94	;btemp
+  1137  005E                     wtemp0	set	94
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        26
+    BSS         9
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62      8      44
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_eeprom_write
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     172
+                                              3 BANK0      5     5      0
+                        _eeprom_read
+                       _eeprom_write
+ ---------------------------------------------------------------------------------
+ (1) _eeprom_write                                         3     2      1     150
+                                              0 BANK0      3     2      1
+ ---------------------------------------------------------------------------------
+ (1) _eeprom_read                                          2     2      0      22
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _eeprom_read
+   _eeprom_write
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               3E      8      2C       4       71.0%
+BITBANK0            3E      0       0       3        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITCOMMON            0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      2C       6        0.0%
+ABS                  0      0      2C       5        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.45 build -152302408 
+Symbol Table                                                                                   Wed May 23 20:53:09 2018
+
+                      pc 0002                       l50 0253                       l52 0264  
+                     l54 02A5                       l71 02F2                       l49 023D  
+                     l75 0325                       _RD 04E0                       _WR 04E1  
+                     fsr 0004                      l131 0204                      l109 01D1  
+                    l821 025B                      l903 0318                      l911 032A  
+                    l925 0364                      l943 03A3                      l927 0368  
+                    l839 0286                      l945 03A7                      l929 0369  
+                    l865 02C2                      l963 03D4                      l947 03A8  
+                    _GP0 0028                      l957 03BF                      l893 0307  
+                    l877 02DB                      _GP1 0029                      _GP2 002A  
+                    _GP3 002B                      _GIE 005F                      u815 0382  
+                    u825 039E                      u785 0343                      u875 03D8  
+                    u795 035F                      u885 03E0                      fsr0 0004  
+                    indf 0000                     _GPIO 0005                     _WREN 04E2  
+         ??_eeprom_write 0044                     _cntA 003C                     _cntB 003A  
+                   _main 0227                     _outA 003F                     _outB 003E  
+                   btemp 005E                     start 0000                    ?_main 0043  
+                  _EEADR 009B            __CFG_WDTE$OFF 0000                    _CARRY 0018  
+                  _CMCON 0019            __CFG_PWRTE$ON 0000                    _autoA 0036  
+                  _autoB 0034                    _speed 0020           __CFG_BOREN$OFF 0000  
+                  pclath 000A                    status 0003                    wtemp0 005E  
+         __CFG_MCLRE$OFF 0000          __initialization 03EA             __end_of_main 03EA  
+                 ??_main 0046                   _EEDATA 009A                   _EECON1 009C  
+                 _EECON2 009D                   _TRISIO 0085     __size_of_eeprom_read 0019  
+   __end_of_eeprom_write 0227  __end_of__initialization 03FD          eeprom_read@addr 0044  
+           __pidataBANK0 01E8        eeprom_write@value 0043               __pbssBANK0 003A  
+             __pmaintext 0227               _eepromData 004B    __size_of_eeprom_write 0025  
+             _oldButtonA 0039               _oldButtonB 0038                  __ptext1 0202  
+                __ptext2 01CF                  _buttonA 0041                  _buttonB 0040  
+                _trigger 0042     end_of_initialization 03FD             _eeprom_write 0202  
+          ??_eeprom_read 0043      start_initialization 03EA      __end_of_eeprom_read 01E8  
+             init_fetch0 01C0              __pdataBANK0 0020                ___latbits 0000  
+          __pcstackBANK0 0043         eeprom_write@addr 0045                __pnvBANK0 004B  
+            _eeprom_read 01CF            __size_of_main 01C3                 init_ram0 01C4  
+          ?_eeprom_write 0043        __CFG_FOSC$INTRCIO 0000             ?_eeprom_read 0043  

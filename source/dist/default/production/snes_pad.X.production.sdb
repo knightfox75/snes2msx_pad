@@ -1,0 +1,100 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F629 ]
+[d frameptr 6 ]
+"62 C:\Code\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Code\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Code\Microchip\xc8\v1.45\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"6 C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+"6 C:\Code\Microchip\xc8\v1.45\sources\pic\eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+"56 D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"216 C:\Code\Microchip\xc8\v1.45\include\pic12f629.h
+[v _GPIO GPIO `VEuc  1 e 1 @5 ]
+"562
+[v _CMCON CMCON `VEuc  1 e 1 @25 ]
+"691
+[v _TRISIO TRISIO `VEuc  1 e 1 @133 ]
+"1162
+[v _EEDATA EEDATA `VEuc  1 e 1 @154 ]
+"1200
+[v _EEADR EEADR `VEuc  1 e 1 @155 ]
+"1220
+[v _EECON1 EECON1 `VEuc  1 e 1 @156 ]
+"1258
+[v _EECON2 EECON2 `VEuc  1 e 1 @157 ]
+"1299
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"1323
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"1325
+[v _GP0 GP0 `VEb  1 e 0 @40 ]
+"1327
+[v _GP1 GP1 `VEb  1 e 0 @41 ]
+"1329
+[v _GP2 GP2 `VEb  1 e 0 @42 ]
+"1331
+[v _GP3 GP3 `VEb  1 e 0 @43 ]
+"1395
+[v _RD RD `VEb  1 e 0 @1248 ]
+"1467
+[v _WR WR `VEb  1 e 0 @1249 ]
+"1469
+[v _WREN WREN `VEb  1 e 0 @1250 ]
+"34 D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+[v _cntA cntA `ui  1 e 2 0 ]
+"35
+[v _cntB cntB `ui  1 e 2 0 ]
+"36
+[v _trigger trigger `uc  1 e 1 0 ]
+"37
+[v _eepromData eepromData `uc  1 e 1 0 ]
+"38
+[v _buttonA buttonA `c  1 e 1 0 ]
+"39
+[v _buttonB buttonB `c  1 e 1 0 ]
+"40
+[v _speed speed `[10]ui  1 e 20 0 ]
+"41
+[v _autoA autoA `ui  1 e 2 0 ]
+"42
+[v _autoB autoB `ui  1 e 2 0 ]
+"43
+[v _oldButtonA oldButtonA `uc  1 e 1 0 ]
+"44
+[v _oldButtonB oldButtonB `uc  1 e 1 0 ]
+"45
+[v _outA outA `uc  1 e 1 0 ]
+"46
+[v _outB outB `uc  1 e 1 0 ]
+"56
+[v _main main `(v  1 e 1 0 ]
+{
+"225
+} 0
+"6 C:\Code\Microchip\xc8\v1.45\sources\pic\eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+{
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@value value `uc  1 p 1 0 ]
+[v eeprom_write@addr addr `uc  1 a 1 2 ]
+"9
+} 0
+"6 C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v eeprom_read@addr addr `uc  1 a 1 1 ]
+"12
+} 0

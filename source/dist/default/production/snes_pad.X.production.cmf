@@ -1,0 +1,390 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+end_init CODE 0 0 0 5 2
+config CONFIG 0 2007 2007 1 2
+$dist/default/production\snes_pad.X.production.obj
+cinit CODE 0 3EA 3EA 15 2
+text1 CODE 0 202 202 25 2
+text2 CODE 0 1CF 1CF 19 2
+nvBANK0 BANK0 1 4B 4B 1 1
+maintext CODE 0 227 227 1C3 2
+cstackBANK0 BANK0 1 43 43 8 1
+inittext CODE 0 1C0 1C0 F 2
+bssBANK0 BANK0 1 3A 3A 9 1
+idataBANK0 CODE 0 1E8 1E8 1A 2
+dataBANK0 BANK0 1 20 20 1A 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 4C-5D 1
+BANK0 4C-5D 1
+CONST 5-1BF 2
+ENTRY 5-1BF 2
+IDLOC 2000-2003 2
+STACK 4C-5D 1
+CODE 5-1BF 2
+SFR0 0-1F 1
+SFR1 80-DD 1
+EEDATA 2100-217F 2
+STRCODE 5-1BF 2
+STRING 5-1BF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\snes_pad.X.production.obj
+3EA cinit CODE >207:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EA cinit CODE >210:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EA cinit CODE >299:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EB cinit CODE >300:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EC cinit CODE >301:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3ED cinit CODE >302:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EE cinit CODE >303:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3EF cinit CODE >304:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F0 cinit CODE >305:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F1 cinit CODE >306:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F2 cinit CODE >307:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F3 cinit CODE >308:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F4 cinit CODE >312:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F5 cinit CODE >313:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F6 cinit CODE >314:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F7 cinit CODE >315:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F8 cinit CODE >316:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3F9 cinit CODE >317:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FA cinit CODE >318:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FB cinit CODE >319:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FC cinit CODE >320:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FD cinit CODE >326:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FD cinit CODE >328:C:\Users\NightFox\AppData\Local\Temp\s50c.
+3FE cinit CODE >329:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CF text2 CODE >6:C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+1D1 text2 CODE >8:C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+1D1 text2 CODE >9:C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+1D2 text2 CODE >10:C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+1D5 text2 CODE >11:C:\Code\Microchip\xc8\v1.45\sources\pic\eeread.c
+202 text1 CODE >6:C:\Code\Microchip\xc8\v1.45\sources\pic\eewrite.c
+204 text1 CODE >8:C:\Code\Microchip\xc8\v1.45\sources\pic\eewrite.c
+227 maintext CODE >56:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+227 maintext CODE >59:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+22A maintext CODE >60:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+22D maintext CODE >61:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+22F maintext CODE >64:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+235 maintext CODE >65:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+23D maintext CODE >66:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+241 maintext CODE >67:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+245 maintext CODE >69:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+24B maintext CODE >70:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+253 maintext CODE >71:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+257 maintext CODE >72:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+25B maintext CODE >85:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+25E maintext CODE >87:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+262 maintext CODE >88:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+264 maintext CODE >90:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+266 maintext CODE >92:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+268 maintext CODE >94:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+26A maintext CODE >95:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+270 maintext CODE >96:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+277 maintext CODE >97:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+279 maintext CODE >98:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+27D maintext CODE >99:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+286 maintext CODE >103:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+288 maintext CODE >104:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+28E maintext CODE >105:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+295 maintext CODE >106:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+297 maintext CODE >107:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+29B maintext CODE >108:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2A4 maintext CODE >112:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2A7 maintext CODE >114:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2AB maintext CODE >116:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2AD maintext CODE >117:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2B3 maintext CODE >118:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2BA maintext CODE >119:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2BC maintext CODE >120:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2C0 maintext CODE >121:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2C2 maintext CODE >125:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2C4 maintext CODE >126:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2CA maintext CODE >127:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2D1 maintext CODE >128:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2D3 maintext CODE >129:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2D7 maintext CODE >130:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2DA maintext CODE >134:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2DB maintext CODE >137:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2DE maintext CODE >139:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2E5 maintext CODE >140:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2E9 maintext CODE >141:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2F2 maintext CODE >142:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2F2 maintext CODE >144:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2F9 maintext CODE >145:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+2FD maintext CODE >146:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+306 maintext CODE >149:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+30B maintext CODE >151:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+312 maintext CODE >152:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+316 maintext CODE >153:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+318 maintext CODE >156:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+31F maintext CODE >157:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+323 maintext CODE >158:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+325 maintext CODE >164:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+327 maintext CODE >165:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+329 maintext CODE >166:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+32A maintext CODE >174:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+32C maintext CODE >175:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+332 maintext CODE >176:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+345 maintext CODE >177:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+347 maintext CODE >178:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+361 maintext CODE >179:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+363 maintext CODE >181:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+364 maintext CODE >185:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+368 maintext CODE >186:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+369 maintext CODE >190:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+36B maintext CODE >191:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+371 maintext CODE >192:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+384 maintext CODE >193:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+386 maintext CODE >194:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3A0 maintext CODE >195:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3A2 maintext CODE >197:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3A3 maintext CODE >201:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3A7 maintext CODE >202:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3A8 maintext CODE >208:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3AB maintext CODE >209:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3B5 maintext CODE >210:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3B9 maintext CODE >211:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3BF maintext CODE >213:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3CA maintext CODE >214:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3CE maintext CODE >215:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3D4 maintext CODE >221:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+3E9 maintext CODE >82:D:\Work\Electronics\Projects\SNES2MSX PAD\code\snes_pad.X\main.c
+1C0 inittext CODE >273:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C0 inittext CODE >274:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C1 inittext CODE >275:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C2 inittext CODE >276:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C3 inittext CODE >277:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C4 inittext CODE >284:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C4 inittext CODE >285:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C5 inittext CODE >286:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C6 inittext CODE >287:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C7 inittext CODE >288:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C8 inittext CODE >289:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1C9 inittext CODE >290:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CA inittext CODE >291:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CB inittext CODE >292:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CC inittext CODE >293:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CD inittext CODE >294:C:\Users\NightFox\AppData\Local\Temp\s50c.
+1CE inittext CODE >295:C:\Users\NightFox\AppData\Local\Temp\s50c.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__LdataBANK0 7FE 0 ABS 0 dataBANK0 -
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 7FE 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 7FE 0 ABS 0 idataBANK0 -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+_RD 4E0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_WR 4E1 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Hstrings 7FE 0 ABS 0 strings -
+_GPIO 5 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_WREN 4E2 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+_cntA 3C 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+_cntB 3A 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+_main 44E 0 CODE 0 maintext dist/default/production\snes_pad.X.production.obj
+_outA 3F 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+_outB 3E 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+btemp 5E 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+start 0 0 CODE 0 init C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__LidataBANK0 7FE 0 ABS 0 idataBANK0 -
+_trigger 42 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+wtemp0 5E 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 7FE 0 ABS 0 clrtext -
+__CFG_FOSC$INTRCIO 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_EECON1 9C 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_EECON2 9D 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_EEDATA 9A 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Lmaintext 7FE 0 ABS 0 maintext -
+__LnvBANK0 7FE 0 ABS 0 nvBANK0 -
+eeprom_write@addr 45 0 BANK0 1 cstackBANK0 dist/default/production\snes_pad.X.production.obj
+_eeprom_read 39E 0 CODE 0 text2 dist/default/production\snes_pad.X.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+start_initialization 7D4 0 CODE 0 cinit dist/default/production\snes_pad.X.production.obj
+__pcstackBANK0 43 0 BANK0 1 cstackBANK0 dist/default/production\snes_pad.X.production.obj
+_TRISIO 85 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+__Hbank0 7FE 0 ABS 0 bank0 -
+__Hbank1 7FE 0 BANK1 1 bank1 -
+__Hcinit 7FE 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 7FE 0 ABS 0 maintext -
+__Hcommon 7FE 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+__Lbank0 7FE 0 ABS 0 bank0 -
+__Lbank1 7FE 0 BANK1 1 bank1 -
+__Lcinit 7D4 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Linittext 7FE 0 ABS 0 inittext -
+__Habs1 7FE 0 ABS 0 abs1 -
+__Hcode 7FE 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 7FE 0 ABS 0 sfr0 -
+__Hsfr1 7FE 0 ABS 0 sfr1 -
+__Htext 7FE 0 ABS 0 text -
+__Labs1 7FE 0 ABS 0 abs1 -
+__Lcode 7FE 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 7FE 0 ABS 0 sfr0 -
+__Lsfr1 7FE 0 ABS 0 sfr1 -
+__Ltext 7FE 0 ABS 0 text -
+__pnvBANK0 4B 0 BANK0 1 nvBANK0 dist/default/production\snes_pad.X.production.obj
+__LcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+_GIE 5F 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_GP0 28 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_GP1 29 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_GP2 2A 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_GP3 2B 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__S0 2008 0 ABS 0 - -
+__S1 4C 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_oldButtonA 39 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+_oldButtonB 38 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+__Hosccal 7FE 0 CODE 0 osccal -
+eeprom_write@value 43 0 BANK0 1 cstackBANK0 dist/default/production\snes_pad.X.production.obj
+__HnvBANK0 7FE 0 ABS 0 nvBANK0 -
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+_eeprom_write 404 0 CODE 0 text1 dist/default/production\snes_pad.X.production.obj
+__pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+__LbssBANK0 7FE 0 ABS 0 bssBANK0 -
+__pmaintext 44E 0 CODE 0 maintext dist/default/production\snes_pad.X.production.obj
+__Lcommon 7FE 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Hinittext 7FE 0 ABS 0 inittext -
+_eepromData 4B 0 BANK0 1 nvBANK0 dist/default/production\snes_pad.X.production.obj
+__size_of_eeprom_write 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+stackhi 0 0 ABS 0 - C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+stacklo 0 0 ABS 0 - C:\Users\NightFox\AppData\Local\Temp\s50c.obj
+__end_of_eeprom_read 3D0 0 CODE 0 text2 dist/default/production\snes_pad.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+init_fetch0 380 0 CODE 0 inittext dist/default/production\snes_pad.X.production.obj
+__HcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__end_of_eeprom_write 44E 0 CODE 0 text1 dist/default/production\snes_pad.X.production.obj
+_buttonA 41 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+_buttonB 40 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+end_of_initialization 7FA 0 CODE 0 cinit dist/default/production\snes_pad.X.production.obj
+__Hintentry 0 0 CODE 0 intentry -
+__Losccal 7FE 0 CODE 0 osccal -
+__Lstrings 7FE 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__HbssBANK0 7FE 0 ABS 0 bssBANK0 -
+__ptext1 404 0 CODE 0 text1 dist/default/production\snes_pad.X.production.obj
+__ptext2 39E 0 CODE 0 text2 dist/default/production\snes_pad.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 7FA 0 CODE 0 cinit dist/default/production\snes_pad.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__pidataBANK0 3D0 0 CODE 0 idataBANK0 dist/default/production\snes_pad.X.production.obj
+__Lclrtext 7FE 0 ABS 0 clrtext -
+__CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Hend_init A 0 CODE 0 end_init -
+init_ram0 388 0 CODE 0 inittext dist/default/production\snes_pad.X.production.obj
+__end_of_main 7D4 0 CODE 0 maintext dist/default/production\snes_pad.X.production.obj
+_CARRY 18 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_CMCON 19 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+_EEADR 9B 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__Hram 7FE 0 ABS 0 ram -
+__Lram 7FE 0 ABS 0 ram -
+_autoA 36 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+_autoB 34 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+_speed 20 0 BANK0 1 dataBANK0 dist/default/production\snes_pad.X.production.obj
+eeprom_read@addr 44 0 BANK0 1 cstackBANK0 dist/default/production\snes_pad.X.production.obj
+__HdataBANK0 7FE 0 ABS 0 dataBANK0 -
+__initialization 7D4 0 CODE 0 cinit dist/default/production\snes_pad.X.production.obj
+__size_of_eeprom_read 0 0 ABS 0 - dist/default/production\snes_pad.X.production.obj
+__pbssBANK0 3A 0 BANK0 1 bssBANK0 dist/default/production\snes_pad.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 5E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 3EA 7D4 15 2
+text1 0 202 404 25 2
+text2 0 1CF 39E 19 2
+maintext 0 227 44E 1C3 2
+inittext 0 1C0 380 F 2
+reset_vec 0 0 0 5 2
+idataBANK0 0 1E8 3D0 1A 2
+dataBANK0 1 20 20 2C 1
+config 0 2007 400E 1 2
